@@ -44,7 +44,7 @@ If it's the only primary navigation menu on the page:
     <span></span>
 </a>
 
-<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle="#off-canvas-navigation-menu"></div>
+<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
 
 <nav id="off-canvas-navigation-menu" class="off-canvas-navigation-menu">
     <ul>
@@ -57,11 +57,11 @@ If there are more than one primary navigation menus, hiding the off-canvas menu
 completely for screen readers:
 
 ```html
-<a aria-hidden="true" href="#off-canvas-navigation-menu" role="button" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
+<button aria-hidden="true" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
     <span></span>
-</a>
-    
-<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle="#off-canvas-navigation-menu"></div>
+</button>
+
+<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
 
 <nav aria-hidden="true" id="off-canvas-navigation-menu" class="off-canvas-navigation-menu">
     <ul>
