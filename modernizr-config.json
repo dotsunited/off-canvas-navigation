@@ -1,0 +1,8 @@
+{
+  "options": [
+    "domPrefixes"
+  ],
+  "feature-detects": [
+    "css/transforms3d"
+  ]
+}
