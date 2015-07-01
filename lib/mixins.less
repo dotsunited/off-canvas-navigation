@@ -6,16 +6,17 @@
 @dotsunited-off-canvas-navigation-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
 @dotsunited-off-canvas-navigation-transition-duration: 350ms;
 
-.dotsunited-off-canvas-navigation-button(
-    @color: @dotsunited-off-canvas-navigation-color;
-    @color-open: @dotsunited-off-canvas-navigation-color-open;
-    @ns: @dotsunited-off-canvas-navigation-namespace;
-    @zi: @dotsunited-off-canvas-navigation-base-z-index
-) {
+.dotsunited-off-canvas-navigation-button-style() {
+    cursor: pointer;
+
     // <button> reset
     -webkit-appearance: none;
     border: 0;
     background: none;
+    outline: none;
+    text-shadow: none;
+    box-shadow: none;
+    text-decoration: none;
     color: inherit;
     font: inherit;
     padding: 0;
@@ -24,8 +25,22 @@
         border: 0;
         padding: 0;
     }
+}
 
-    cursor: pointer;
+.dotsunited-off-canvas-navigation-button(
+    @color: @dotsunited-off-canvas-navigation-color;
+    @color-open: @dotsunited-off-canvas-navigation-color-open;
+    @ns: @dotsunited-off-canvas-navigation-namespace;
+    @zi: @dotsunited-off-canvas-navigation-base-z-index
+) {
+    .dotsunited-off-canvas-navigation-button-style();
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:visited {
+        .dotsunited-off-canvas-navigation-button-style();
+    }
 
     width: 42px;
     height: 32px;
