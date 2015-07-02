@@ -19,7 +19,6 @@
     text-decoration: none;
     color: inherit;
     font: inherit;
-    padding: 0;
 
     &::-moz-focus-inner {
         border: 0;
@@ -42,67 +41,75 @@
         .dotsunited-off-canvas-navigation-button-style();
     }
 
-    width: 42px;
-    height: 32px;
-
-    transform: rotate(0deg);
-    transition: .5s ease-in-out;
-
     position: relative;
     z-index: @zi + 3;
 
-    span,
-    &:before,
-    &:after {
+    padding: 10px;
+
+    > span {
+        position: relative;
+
         display: block;
-        height: 8px;
-        width: 100%;
+        width: 42px;
+        height: 32px;
 
-        position: absolute;
-        left: 0;
+        transition: .5s ease-in-out;
 
-        background-color: @color;
-        opacity: 1;
+        span,
+        &:before,
+        &:after {
+            display: block;
+            height: 25%;
+            width: 100%;
 
-        transform: rotate(0deg);
-        transition: @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
+            position: absolute;
+            left: 0;
 
-        content: '';
-    }
+            background-color: @color;
+            opacity: 1;
 
-    span {
-        top: 0;
-    }
+            transform: rotate(0deg);
+            transition: @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
 
-    &:before {
-        top: 50%;
-        transform: translateY(-50%);
-    }
+            content: '';
+        }
 
-    &:after {
-        top: 100%;
-        transform: translateY(-100%);
+        span {
+            top: 0;
+        }
+
+        &:before {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &:after {
+            top: 100%;
+            transform: translateY(-100%);
+        }
     }
 
     .@{ns}--open & {
         position: fixed;
 
-        span {
-            background-color: @color-open;
-            top: 50%;
-            transform: translateY(-50%) rotate(135deg);
-        }
+        > span {
+            span {
+                background-color: @color-open;
+                top: 50%;
+                transform: translateY(-50%) rotate(135deg);
+            }
 
-        &:before {
-            background-color: @color-open;
-            opacity: 0;
-            left: -100%;
-        }
+            &:before {
+                background-color: @color-open;
+                opacity: 0;
+                left: -100%;
+            }
 
-        &:after {
-            background-color: @color-open;
-            top: 50%;
-            transform: translateY(-50%) rotate(-135deg);
+            &:after {
+                background-color: @color-open;
+                top: 50%;
+                transform: translateY(-50%) rotate(-135deg);
+            }
         }
     }
 }

@@ -41,7 +41,7 @@ If it's the only primary navigation menu on the page:
 
 ```html
 <a aria-controls="off-canvas-navigation-menu" aria-expanded="false" href="#off-canvas-navigation-menu" role="button" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
-    <span></span>
+    <span><span></span></span>
 </a>
 
 <div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
@@ -68,6 +68,27 @@ completely for screen readers:
         <li>...</li>
     </ul>
 </nav>
+```
+
+How-tos
+-------
+
+### Change the size of the button
+
+To change the size of the button, just set a different width and height for the
+first nested `<span>`.
+
+```css
+@import "~dotsunited-off-canvas-navigation/lib/mixins";
+
+.off-canvas-navigation-button {
+    .dotsunited-off-canvas-navigation-button(off-canvas-navigation);
+
+    > span {
+        width: 100px;
+        height: 90px;
+    }
+}
 ```
 
 License
