@@ -13,13 +13,13 @@ var setup = require('dotsunited-off-canvas-navigation/lib/setup');
 setup('off-canvas-navigation');
 ```
 
-```css
+```less
 @import "~dotsunited-off-canvas-navigation/lib/mixins";
 
 .off-canvas-navigation-button {
     .dotsunited-off-canvas-navigation-button(off-canvas-navigation);
     
-    /* Custom styles */
+    // Custom styles
     position: absolute;
     top: 10px;
     right: 10px;
