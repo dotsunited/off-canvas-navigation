@@ -135,13 +135,17 @@
         -webkit-backface-visibility: hidden;
     }
 
-    .@{ns}--open & {
-        transform: translate3d(0%, 0, 0);
-    }
-
     .no-csstransforms3d & {
+        // Reset transform in case Modernizr reports that 3d transforms are
+        // not supported (eg. if the implementation is buggy) but the
+        // browser _does_ support it (at least partially).
+        transform: translate3d(0%, 0, 0);
         right: -100%;
         transition: right @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
+    }
+
+    .@{ns}--open & {
+        transform: translate3d(0%, 0, 0);
     }
 
     .no-csstransforms3d.@{ns}--open & {
