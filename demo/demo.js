@@ -424,8 +424,6 @@
 	        var root = $('html').addClass(namespace);
 
 	        function open(toggle, panel) {
-	            root.addClass(openClass);
-
 	            toggle
 	                .attr('aria-expanded', 'true')
 	                .trigger(namespace + ':' + 'open', [toggle, panel])
@@ -455,6 +453,8 @@
 	                    close(toggle, panel);
 	                })
 	            ;
+
+	            root.addClass(openClass);
 	        }
 
 	        function close(toggle, panel) {
@@ -462,11 +462,8 @@
 	                .off('.' + namespace + '-internal')
 	            ;
 
-	            root.removeClass(openClass);
-
 	            panel
 	                .attr('aria-hidden', 'true')
-	                .attr('hidden', 'true')
 	                .removeAttr('tabindex')
 	                .blur()
 	            ;
@@ -476,6 +473,12 @@
 	                .focus()
 	                .trigger(namespace + ':' + 'open', [toggle, panel])
 	            ;
+
+	            root.removeClass(openClass);
+
+	            setTimeout(function() {
+	                panel.attr('hidden', 'true')
+	            }, 500);
 	        }
 
 	        $document
