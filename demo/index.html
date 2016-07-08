@@ -10,13 +10,24 @@
 
 <h1>Off-Canvas Navigation Demo</h1>
 
-<a aria-controls="off-canvas-navigation-menu" aria-expanded="false" href="#off-canvas-navigation-menu" role="button" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
+<button
+    aria-label="Open navigation"
+    aria-controls="off-canvas-navigation-menu"
+    aria-expanded="false"
+    class="off-canvas-navigation-button"
+    data-off-canvas-navigation-toggle
+>
     <span><span></span></span>
-</a>
+</button>
 
-<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
+<div aria-hidden="true" class="off-canvas-navigation-backdrop"></div>
 
-<div id="off-canvas-navigation-menu" class="off-canvas-navigation-menu">
+<div
+    id="off-canvas-navigation-menu"
+    aria-hidden="true"
+    hidden
+    class="off-canvas-navigation-menu"
+>
     <nav class="sliding-navigation">
         <ul>
             <li><a href="#">Item 1</a></li>

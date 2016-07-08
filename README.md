@@ -37,33 +37,25 @@ setup('off-canvas-navigation');
 HTML
 -----
 
-If it's the only primary navigation menu on the page:
-
 ```html
-<a aria-controls="off-canvas-navigation-menu" aria-expanded="false" href="#off-canvas-navigation-menu" role="button" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
+<button
+    aria-label="Open navigation"
+    aria-controls="off-canvas-navigation-menu"
+    aria-expanded="false"
+    class="off-canvas-navigation-button"
+    data-off-canvas-navigation-toggle
+>
     <span><span></span></span>
-</a>
-
-<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
-
-<nav id="off-canvas-navigation-menu" class="off-canvas-navigation-menu">
-    <ul>
-        <li>...</li>
-    </ul>
-</nav>
-```
-
-If there are more than one primary navigation menus, hiding the off-canvas menu
-completely for screen readers:
-
-```html
-<button aria-hidden="true" class="off-canvas-navigation-button" data-off-canvas-navigation-toggle>
-    <span></span>
 </button>
 
-<div aria-hidden="true" class="off-canvas-navigation-backdrop" data-off-canvas-navigation-toggle></div>
+<div aria-hidden="true" class="off-canvas-navigation-backdrop"></div>
 
-<nav aria-hidden="true" id="off-canvas-navigation-menu" class="off-canvas-navigation-menu">
+<div
+    id="off-canvas-navigation-menu"
+    aria-hidden="true"
+    hidden
+    class="off-canvas-navigation-menu"
+>
     <ul>
         <li>...</li>
     </ul>
