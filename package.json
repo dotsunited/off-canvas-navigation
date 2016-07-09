@@ -27,6 +27,7 @@
     "webpack": "^1.13.1"
   },
   "scripts": {
-    "build-demo": "webpack --config demo/_src/webpack.config.js --progress --profile --colors"
+    "build-demo": "webpack --config demo/_src/webpack.config.js --progress --profile --colors",
+    "watch-demo": "webpack --config demo/_src/webpack.config.js --progress --profile --colors --watch "
   }
 }
