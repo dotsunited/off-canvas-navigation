@@ -53,7 +53,6 @@ HTML
 <section
     id="off-canvas-navigation-menu"
     aria-hidden="true"
-    hidden
     class="off-canvas-navigation-menu"
 >
     <nav>

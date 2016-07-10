@@ -122,7 +122,10 @@
     overflow-x: hidden;
     overflow-y: auto;
 
-    transition: transform @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
+    visibility: hidden;
+
+    transition: @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
+    transition-property: transform, right, visibility;
     transform: translate3d(100%, 0, 0);
 
     position: fixed;
@@ -141,14 +144,16 @@
         // browser _does_ support it (at least partially).
         transform: translate3d(0%, 0, 0);
         right: -100%;
-        transition: right @dotsunited-off-canvas-navigation-transition-duration @dotsunited-off-canvas-navigation-transition-timing-function;
     }
 
     .@{ns}--open & {
+        visibility: visible;
+        transition-property: transform;
         transform: translate3d(0%, 0, 0);
     }
 
     .no-csstransforms3d.@{ns}--open & {
+        transition-property: right;
         right: 0;
     }
 }
