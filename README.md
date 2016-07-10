@@ -50,16 +50,18 @@ HTML
 
 <div aria-hidden="true" class="off-canvas-navigation-backdrop"></div>
 
-<div
+<section
     id="off-canvas-navigation-menu"
     aria-hidden="true"
     hidden
     class="off-canvas-navigation-menu"
 >
-    <ul>
-        <li>...</li>
-    </ul>
-</nav>
+    <nav>
+        <ul>
+            <li>...</li>
+        </ul>
+    </nav>
+</section>
 ```
 
 How-tos
